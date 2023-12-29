@@ -37,8 +37,7 @@ There’s two concepts to note when using the encryption: Hashing and AES encryp
 2. **Password Input:**
    - Securely input a user password without echoing it on the console using getpass.
    -```python
-   password = getpass.getpass()
-   ```python
+   password = getpass.getpass() 
 
 3. **Password Hashing with Argon2:**
    - Use Argon2, a secure password hashing algorithm, to hash the input password.
