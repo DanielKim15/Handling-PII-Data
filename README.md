@@ -35,31 +35,32 @@ Here are the libraries you need to get started with the encryption:
 There’s two concepts to note when using the encryption: Hashing and AES encryption. Hashing turns the values from a password to randomized strings and special characters to ensure randomness. So when a hacker tries to brute force their way to guessing the password with an algorithm, the time it will take will be so slow that their computer might take years to finally break through. Since Argon2 was the winner in the 2015 Password Hashing Competition we will be use this library for it. For the AES encryption, it uses a 256 bit key to convert the password or data into a cipher. Considering how extremely rare it is for someone to brute force their way into the encryption, adding this alongside the hashed password will further increase security for your data.
 
 2. **Password Input:**
-   - Securely obtain a password from the user.
+   - Securely input a user password without echoing it on the console using getpass.
+   -```python
+   password = getpass.getpass()
+   ```python
 
 3. **Password Hashing with Argon2:**
-   - Hash the password using Argon2.
+   - Use Argon2, a secure password hashing algorithm, to hash the input password.
+   - ```python
+   hasher = argon2.PasswordHasher()
+   hashed_password = hasher.hash(password)
+   ```python
 
 4. **Initialization Vector (IV) Generation:**
-   - Generate a 16-byte random IV.
+   - Generate a random Initialization Vector (IV) for AES encryption. This adds randomness to the encryption process.
 
 5. **Deriving the AES Key:**
-   - Hash the Argon2 hashed password and use it as the AES encryption key.
+   - Derive an AES encryption key from the hashed password using SHA-256 hashing.
 
-6. **Reading the File to Encrypt:**
-   - Open and read the contents of the file to be encrypted.
+6. **Reading and Padding the File:**
+   - Read the file to be encrypted and pad it to align with AES's block size requirement.
 
-7. **Padding the File Data:**
-   - Pad the data to be a multiple of AES's block size (16 bytes).
+7. **File Encryption:**
+   - Encrypt the file using AES in CBC mode with the derived key and IV.
 
-8. **Creating an AES Cipher:**
-   - Create an AES cipher object with the derived key, CBC mode, and the IV.
-
-9. **Encrypting the Data:**
-   - Encrypt the padded file data.
-
-10. **Writing IV and Encrypted Data:**
-    - Write the IV and the encrypted data to a new file.
+8. **Saving the Encrypted File:**
+   - Save the IV and the encrypted data to a new file. The IV is essential for decryption.
 
 Encryption Process Explanation
 The script follows these steps:
