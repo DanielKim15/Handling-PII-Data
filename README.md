@@ -1,10 +1,17 @@
-# Handling-PII-Data Part 1: Encrypting the Data
+# Handling-PII-Data 
 When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
 <br />-
 1. Encrypting the data <br />
 2. Creating Synthetic Data
 
 <br />
+
+## Real life Scenario/Why is this important? <br />
+A few months ago I encountered a problem to where I cannot recieve the data in time because the client had forgot to tell their lawyers about the project. Due to the Personal Identifiable Information (PII) within the data the lawyers had to go through the entire process of getting it approved, and then go through the process of eliminating some of the PII data before they can send it to us. Considering how we had limited time with the project, We had to find a way to speed up the process by providing options to enhance data security. One of the methods we used to help enhance the security and help speed up the process was encrypting the data.
+
+<br />
+## Part 1: Encrypting the Data
+
 ## Encryption Process Explanation
 
 This script demonstrates the process of encrypting a file using the AES (Advanced Encryption Standard) cipher in Cipher Block Chaining (CBC) mode. Below is a step-by-step explanation of the code:
@@ -109,3 +116,10 @@ Notes
 The script requires the presence of practice.ipynb in the working directory.
 The output file encrypted_practice.ipynb contains the encrypted data.
 Decryption requires the same password, IV, and key derivation process.
+
+<br />
+Once we presented the clients these options, we were able to recieve the data faster than if we had just waited for their beurocracy to finish. However considerable amount of time has already passed before we obtained the data, and it greatly impacted the quality of our analysis. Another method that I recently used that could be used to speed the beaurocracy even further, or possibly avoid it all, is creating syntehtic data from their original data.
+
+<br />
+## Part 2: Creating Synthetic Data from the real life data
+
