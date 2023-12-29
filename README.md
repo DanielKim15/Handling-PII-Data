@@ -15,6 +15,66 @@ A few months ago I encountered a problem to where I cannot recieve the data in t
 
 This script demonstrates the process of encrypting a file using the AES (Advanced Encryption Standard) cipher in Cipher Block Chaining (CBC) mode. Below is a step-by-step explanation of the code:
 
+Certainly! Below is a formatted description for your GitHub README file, including both the explanation and the code snippet. You can copy and paste this directly into your README.md file.
+
+File Encryption using AES and Argon2
+This script demonstrates a process for encrypting a file using the AES (Advanced Encryption Standard) cipher in Cipher Block Chaining (CBC) mode.
+
+Overview
+The script performs the following steps:
+
+Securely inputs a user password.
+Hashes the password using the Argon2 algorithm.
+Generates a random Initialization Vector (IV) for AES encryption.
+Derives an AES encryption key from the hashed password.
+Reads and pads the target file to align with AES block size.
+Encrypts the file using AES in CBC mode.
+Saves the IV and encrypted data to a new file.
+Code Snippet
+python
+Copy code
+import getpass
+import argon2
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+import os
+import hashlib
+
+# Get the password from the user
+password = getpass.getpass()
+
+# Hash the password with Argon2
+hasher = argon2.PasswordHasher()
+hashed_password = hasher.hash(password)
+
+# Generate a random initialization vector (IV)
+iv = os.urandom(16)
+
+# Derive the AES key from the password using a key derivation function
+aes_key = hashlib.sha256(hashed_password.encode()).digest()
+
+# Open the file to encrypt
+with open("practice.ipynb", "rb") as f:
+    file_data = f.read()
+
+# Pad the file data to a multiple of 16 bytes
+padded_data = pad(file_data, AES.block_size)
+
+# Create an AES cipher with the derived key and the IV
+cipher = AES.new(aes_key, AES.MODE_CBC, iv)
+
+# Encrypt the padded file data using the AES cipher
+encrypted_data = cipher.encrypt(padded_data)
+
+# Write the IV and encrypted data to a file
+with open("encrypted_practice.ipynb", "wb") as f:
+    f.write(iv)
+    f.write(encrypted_data)
+Notes
+The script uses Argon2 for password hashing, ensuring a robust and secure way to generate the AES key.
+The Initialization Vector (IV) is randomly generated for each encryption process to enhance security.
+The encrypted file contains the IV followed by the encrypted data. The same IV must be used for decryption.
+Ensure you have the required packages installed (argon2, pycryptodome) to run the script.
 1. **Importing Libraries:**
    - `getpass` for securely entering a password.
    - `argon2` for hashing the password.
@@ -115,6 +175,7 @@ Notes
 The script requires the presence of practice.ipynb in the working directory.
 The output file encrypted_practice.ipynb contains the encrypted data.
 Decryption requires the same password, IV, and key derivation process.
+
 
 <br />
 
