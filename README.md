@@ -52,16 +52,14 @@ There’s two concepts to note when using the encryption: Hashing and AES encryp
 4. **Initialization Vector (IV) Generation:**
    - Generate a random Initialization Vector (IV) for AES encryption. This adds randomness to the encryption process.
    ```
-iv = os.urandom(16)
+iv = os.urandom(16)   
    
-   ```
-
 5. **Deriving the AES Key:**
    - Derive an AES encryption key from the hashed password using SHA-256 hashing.
    ```
 aes_key = hashlib.sha256(hashed_password.encode()).digest()
    
-   ```
+   
 
 6. **Reading and Padding the File:**
    - Read the file to be encrypted and pad it to align with AES's block size requirement.
