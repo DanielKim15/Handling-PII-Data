@@ -17,9 +17,6 @@ This script demonstrates the process of encrypting a file using the AES (Advance
 
 Certainly! Below is a formatted description for your GitHub README file, including both the explanation and the code snippet. You can copy and paste this directly into your README.md file.
 
-File Encryption using AES and Argon2
-This script demonstrates a process for encrypting a file using the AES (Advanced Encryption Standard) cipher in Cipher Block Chaining (CBC) mode.
-
 Overview
 The script performs the following steps:
 
