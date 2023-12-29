@@ -43,44 +43,69 @@ This script demonstrates the process of encrypting a file using the AES (Advance
 10. **Writing IV and Encrypted Data:**
     - Write the IV and the encrypted data to a new file.
 
-### Code
+Encryption Process Explanation
+The script follows these steps:
 
-```python
+1. Importing Libraries
+Various Python libraries are used for the encryption process:
+
+python
+Copy code
 import getpass
 import argon2
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
 import os
 import hashlib
+2. Secure Password Input
+The password is securely input using getpass.getpass(), which hides the password from the console:
 
-# Get the password from the user
+python
+Copy code
 password = getpass.getpass()
+3. Password Hashing with Argon2
+The password is hashed using the secure Argon2 algorithm:
 
-# Hash the password with Argon2
+python
+Copy code
 hasher = argon2.PasswordHasher()
 hashed_password = hasher.hash(password)
+4. IV Generation
+A random Initialization Vector (IV) for AES encryption is generated:
 
-# Generate a random initialization vector (IV)
+python
+Copy code
 iv = os.urandom(16)
+5. AES Key Derivation
+An AES encryption key is derived from the hashed password using SHA-256:
 
-# Derive the AES key from the password
+python
+Copy code
 aes_key = hashlib.sha256(hashed_password.encode()).digest()
+6. Reading and Padding the File
+The file is read and padded to align with AES's block size requirement:
 
-# Open the file to encrypt
+python
+Copy code
 with open("practice.ipynb", "rb") as f:
     file_data = f.read()
-
-# Pad the file data
 padded_data = pad(file_data, AES.block_size)
+7. File Encryption
+The file is encrypted using AES in CBC mode:
 
-# Create an AES cipher
+python
+Copy code
 cipher = AES.new(aes_key, AES.MODE_CBC, iv)
-
-# Encrypt the data
 encrypted_data = cipher.encrypt(padded_data)
+8. Saving the Encrypted Data
+The IV and the encrypted data are saved to a new file:
 
-# Write the IV and encrypted data to a file
+python
+Copy code
 with open("encrypted_practice.ipynb", "wb") as f:
     f.write(iv)
     f.write(encrypted_data)
-
+Notes
+The script requires the presence of practice.ipynb in the working directory.
+The output file encrypted_practice.ipynb contains the encrypted data.
+Decryption requires the same password, IV, and key derivation process.
