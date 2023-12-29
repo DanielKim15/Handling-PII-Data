@@ -43,7 +43,7 @@ There’s two concepts to note when using the encryption: Hashing and AES encryp
 
 3. **Password Hashing with Argon2:**
    - Use Argon2, a secure password hashing algorithm, to hash the input password.
-```
+``` python
    hasher = argon2.PasswordHasher()
    hashed_password = hasher.hash(password)
    
@@ -51,13 +51,13 @@ There’s two concepts to note when using the encryption: Hashing and AES encryp
 
 4. **Initialization Vector (IV) Generation:**
    - Generate a random Initialization Vector (IV) for AES encryption. This adds randomness to the encryption process.
-```
+``` python
 iv = os.urandom(16)   
 ```
    
 5. **Deriving the AES Key:**
    - Derive an AES encryption key from the hashed password using SHA-256 hashing.
-```
+``` python
 aes_key = hashlib.sha256(hashed_password.encode()).digest()
 
 ```   
@@ -66,7 +66,7 @@ aes_key = hashlib.sha256(hashed_password.encode()).digest()
 6. **Reading and Padding the File:**
    - Read the file to be encrypted and pad it to align with AES's block size requirement.
 
-```
+``` python
 with open("practice.ipynb", "rb") as f:
     file_data = f.read()
 padded_data = pad(file_data, AES.block_size)
@@ -75,7 +75,7 @@ padded_data = pad(file_data, AES.block_size)
 
 7. **File Encryption:**
    - Encrypt the file using AES in CBC mode with the derived key and IV.
-```
+``` python
 cipher = AES.new(aes_key, AES.MODE_CBC, iv)
 encrypted_data = cipher.encrypt(padded_data)
 
@@ -83,7 +83,7 @@ encrypted_data = cipher.encrypt(padded_data)
 
 8. **Saving the Encrypted File:**
    - Save the IV and the encrypted data to a new file. The IV is essential for decryption.
-```
+``` python
 
 with open("encrypted_practice.ipynb", "wb") as f:
     f.write(iv)
