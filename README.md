@@ -101,6 +101,76 @@ Once we presented the clients these options, we were able to recieve the data fa
 
 <br />
 
-Now that you've built the encrypted file you want to be able hide your keys away from everyone else. Now you can write down the password on a piece of paper, but that takes precious time that can be used on something else. Luckily there is a way where we can store the c
+Now that you've built the encrypted file you want to be able hide your keys away from everyone else. Now you can write down the password on a piece of paper, but that takes precious time that can be used on something else. Luckily there is a way where we can store the password within the computer in a safeplace using a package called keyring.
+
+<br />
+
+Here are the steps needed to proceed with the steps:
+
+1. **Importing Libraries and Modules:**
+   - keyring for accessing and manipulating the system's keyring service.
+   - keyring.util.platform_ for accessing platform-specific keyring configuration.
+
+``` python
+import keyring
+import keyring.util.platform_ as keyring_platform
+
+```
+
+<br />
+
+
+2. **Password Input:**
+   - Securely input a user password without echoing it on the console using getpass.
+``` python
+ password = getpass.getpass()
+
+```
+
+3. **Printing Configuration and Data Root:**
+   - The script prints the configuration and data root directories for the keyring service on your system. This can vary depending on your operating system       and environment.
+``` python
+print(keyring_platform.config_root())
+# Output might be: /home/username/.config/python_keyring
+
+   
+```
+
+4. **Displaying the Active Keyring Backend:**
+   - The script prints the current backend being used by the keyring library. This shows which service is being used to store and manage the passwords.
+``` python
+print(keyring.get_keyring())
+# Output might be: keyring.backends.SecretService.Keyring (priority: 5)
+
+```
+   
+5. **Setting Namespace and Entry:**
+   - Defines a namespace and an entry for storing the password. This helps in organizing and retrieving the credentials easily.
+``` python
+NAMESPACE = "my-app"
+ENTRY = "API_KEY"
+
+```   
+   
+
+6. **Storing the Password:**
+   - Retrieves and prints the password associated with the specified namespace and entry.
+
+``` python
+keyring.set_password(NAMESPACE, ENTRY, hashed_password)
+
+```
+
+7. **Fetching Credentials as an Object:**
+   - Retrieves the credentials as a Credential object, which includes both the username (entry) and the password. This is useful for scenarios where you need both pieces of information.
+``` python
+cred = keyring.get_credential(NAMESPACE, ENTRY)
+print(f"Password for username {cred.username} in namespace {NAMESPACE} is {cred.password}")
+# Output: Password for username API_KEY in namespace my-app is [stored password]
+
+
+```
+
+
 
 
