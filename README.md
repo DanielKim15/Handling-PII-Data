@@ -1,6 +1,6 @@
 # Handling-PII-Data 
 When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
-<br />-
+<br />
 1. Encrypting the data <br />
 2. Creating Synthetic Data
 
@@ -31,6 +31,7 @@ Here are the libraries you need to get started with the encryption:
    - getpass for securely entering a password without echoing it to the console.
 
 <br />
+
 There’s two concepts to note when using the encryption: Hashing and AES encryption. Hashing turns the values from a password to randomized strings and special characters to ensure randomness. So when a hacker tries to brute force their way to guessing the password with an algorithm, the time it will take will be so slow that their computer might take years to finally break through. Since Argon2 was the winner in the 2015 Password Hashing Competition we will be use this library for it. For the AES encryption, it uses a 256 bit key to convert the password or data into a cipher. Considering how extremely rare it is for someone to brute force their way into the encryption, adding this alongside the hashed password will further increase security for your data.
 
 2. **Password Input:**
