@@ -10,9 +10,8 @@ When encountering a bureaucracy issue with the client that prevents you from rec
 A few months ago I encountered a problem to where I cannot recieve the data in time because the client had forgot to tell their lawyers about the project. Due to the Personal Identifiable Information (PII) within the data the lawyers had to go through the entire process of getting it approved, and then go through the process of eliminating some of the PII data before they can send it to us. Considering how we had limited time with the project, We had to find a way to speed up the process by providing options to enhance data security. One of the methods we used to help enhance the security and help speed up the process was encrypting the data.
 
 <br />
-## Part 1: Encrypting the Data
 
-## Encryption Process Explanation
+## Part 1: Encrypting the Data
 
 This script demonstrates the process of encrypting a file using the AES (Advanced Encryption Standard) cipher in Cipher Block Chaining (CBC) mode. Below is a step-by-step explanation of the code:
 
