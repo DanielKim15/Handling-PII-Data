@@ -96,5 +96,6 @@ with open("encrypted_practice.ipynb", "wb") as f:
 Once we presented the clients these options, we were able to recieve the data faster than if we had just waited for their beurocracy to finish. However considerable amount of time has already passed before we obtained the data, and it greatly impacted the quality of our analysis. Another method that I recently used that could be used to speed the beaurocracy even further, or possibly avoid it all, is creating syntehtic data from their original data.
 
 <br />
+
 ## Part 2: Storing your password
 
