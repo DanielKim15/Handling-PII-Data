@@ -99,3 +99,8 @@ Once we presented the clients these options, we were able to recieve the data fa
 
 ## Part 2: Storing your password
 
+<br />
+
+Now that you've built the encrypted file you want to be able hide your keys away from everyone else. Now you can write down the password on a piece of paper, but that takes precious time that can be used on something else. Luckily there is a way where we can store the c
+
+
