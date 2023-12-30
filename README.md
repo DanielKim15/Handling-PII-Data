@@ -105,7 +105,7 @@ Now that you've built the encrypted file you want to be able hide your keys away
 
 <br />
 
-Here are the steps needed to proceed with the steps:
+Here are the steps needed to proceed with password saving:
 
 1. **Importing Libraries and Modules:**
    - keyring for accessing and manipulating the system's keyring service.
@@ -171,6 +171,85 @@ print(f"Password for username {cred.username} in namespace {NAMESPACE} is {cred.
 
 ```
 
+<br />
+Something to note: hashed_password is a variable where the password is stored from part 1. In case you've run the coding in another file and your running this file seperately, be sure to replace the variable with the actual password of yours. 
+Now that everything is set up, lets test out the decryption of the file!
 
+<br />
+
+## Part 3: De-encrypting the Data
+
+The data is encrypted, the key is stashed, now lets give it a shot and see if we can access our files!
+ <br />
+
+1. **Importing Libraries and Modules:**
+   - keyring for retrieving the stored password.
+   - argon2 is not directly used in this script but generally used for hashing passwords.
+   - Crypto.Cipher.AES and Crypto.Util.Padding.unpad from the pycryptodome package for decryption and removing padding.
+   - os and hashlib for handling file operations and hashing.
+
+``` python
+import keyring
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+import os
+import hashlib
+
+```
+
+<br />
+
+
+2. **Retrieving the Stored Password:**
+   - The script retrieves the stored password from the keyring using the specified namespace and entry.
+``` python
+ password = keyring.get_password("my-app", "API_KEY")
+
+```
+
+3. **Reading the Encrypted File:**
+   - Opens the encrypted file and reads the Initialization Vector (IV) and the encrypted data. The IV is typically stored at the beginning of the file.
+``` python
+with open("C:/Users/CENSEO/Downloads/encrypted_practice.ipynb", "rb") as f:
+    iv = f.read(16)  # Read the 16-byte IV
+    encrypted_data = f.read()  # Read the remaining encrypted data
+
+   
+```
+
+4. **Deriving the AES Key:**
+   - Derives the AES encryption key from the password. Here, a simple SHA-256 hash of the password is used to generate a 256-bit key.
+``` python
+aes_key = hashlib.sha256(password.encode()).digest()
+
+
+```
+   
+5. **Initializing the AES Cipher for Decryption:**
+   - Sets up the AES cipher with the derived key and the IV for decryption.
+``` python
+cipher = AES.new(aes_key, AES.MODE_CBC, iv)
+
+
+```   
+   
+
+6. **Decrypting the Data:**
+   - Decrypts the encrypted data and then removes the padding to get the original file content.
+
+``` python
+decrypted_data = unpad(cipher.decrypt(encrypted_data), AES.block_size)
+
+
+```
+
+7. **Writing the Decrypted Data to a File:**
+   - Writes the decrypted data to a new file, effectively restoring the original content.
+``` python
+with open("C:/Users/dkim/Downloads/dencrypted_practice_2.ipynb", "wb") as f:
+    f.write(decrypted_data)
+
+
+```
 
 
