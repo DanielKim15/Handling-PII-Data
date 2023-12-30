@@ -252,4 +252,16 @@ with open("C:/Users/dkim/Downloads/dencrypted_practice_2.ipynb", "wb") as f:
 
 ```
 
+<br />
+And there you have it: Your able to gain access through you de-encrypted data and now you can play around with it.
+
+<br />
+
+## Closing Thoughts:
+
+<br />
+
+Keep in mind the encryption from the this coding is very simple compared to other paid softwares out there. The main purpose for showing this method is to help ease the mind of the clients and to expedite the process in gaining access to PII data in case there is beaurocracy issues. Even though this method has allowed my team to gain access to the data, our timeline to finish the project was near the end and the quality of our analysis was heavily affected. In part 2 I will share another method that I recently learned that could help you get started on your analysis without the need of their real data until they are ready to share it with you. This method: Synthetic Data.
+
+
 
