@@ -1,5 +1,5 @@
 # Handling-PII-Data 
-When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
+So the lawyers were involved before our project began because the client did not inform them beforehand. If it wasn't for this method, my team's project would've been canceled and we would've lost hundered of thousands of dollars. When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
 <br />
 1. Encrypting the data <br />
 2. Creating Synthetic Data
