@@ -1,16 +1,16 @@
 # Streamlining Bureaucratic Data Access: A Guide to Data Encryption with Python
-So the lawyers were involved before our project began because the client did not inform them beforehand. If it wasn't for this method, my team's project would've been canceled and we would've lost hundered of thousands of dollars. When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
+So the lawyers were involved before our project began because the client did not inform them beforehand. If it wasn't for this method, my team's project would've been canceled and we would've lost hundred of thousands of dollars. When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
 <br />
 1. Encrypting the data <br />
 2. Creating Synthetic Data
 
 <br />
-For this respository we will use 
+For this respository we will be focusing on the Encryption aspect of the data file.
 
 <br />
 
 ## Real life Scenario/Why is this important? <br />
-A few months ago I encountered a problem to where I cannot recieve the data in time because the client had forgot to tell their lawyers about the project. Due to the Personal Identifiable Information (PII) within the data the lawyers had to go through the entire process of getting it approved, and then go through the process of eliminating some of the PII data before they can send it to us. Considering how we had limited time with the project, We had to find a way to speed up the process by providing options to enhance data security. One of the methods we used to help enhance the security and help speed up the process was encrypting the data.
+A few months ago I encountered a problem where my team and I could not recieve the data in time due to bureaucratic challenges we face related to accessing PII (Personal Identifiable Information) data. Considering how we had limited time with the project, We had to find a way to speed up the process by providing options to enhance data security. One of the methods we used to help enhance the security and help speed up the process was encrypting the data.
 
 <br />
 
@@ -32,7 +32,7 @@ Here are the libraries you need to get started with the encryption:
 
 <br />
 
-There’s two concepts to note when using the encryption: Hashing and AES encryption. Hashing turns the values from a password to randomized strings and special characters to ensure randomness. So when a hacker tries to brute force their way to guessing the password with an algorithm, the time it will take will be so slow that their computer might take years to finally break through. Since Argon2 was the winner in the 2015 Password Hashing Competition we will be use this library for it. For the AES encryption, it uses a 256 bit key to convert the password or data into a cipher. Considering how extremely rare it is for someone to brute force their way into the encryption, adding this alongside the hashed password will further increase security for your data.
+There’s two concepts to note when using encryption: Hashing and AES encryption. Hashing turns the values from a password to randomized strings and special characters to ensure randomness. So when a hacker tries to brute force their way to guessing the password with an algorithm, the time it will take will be so slow that their computer might take years to finally break through. Since Argon2 was the winner in the 2015 Password Hashing Competition we will be use this library for it. For the AES encryption, it uses a 256 bit key to convert the password or data into a cipher. Considering how extremely rare it is for someone to brute force their way into the encryption, adding this alongside the hashed password will further increase security for your data.
 
 2. **Password Input:**
    - Securely input a user password without echoing it on the console using getpass.
@@ -93,7 +93,7 @@ with open("encrypted_practice.ipynb", "wb") as f:
 
 <br />
 
-Once we presented the clients these options, we were able to recieve the data faster than if we had just waited for their beurocracy to finish. However considerable amount of time has already passed before we obtained the data, and it greatly impacted the quality of our analysis. Another method that I recently used that could be used to speed the beaurocracy even further, or possibly avoid it all, is creating syntehtic data from their original data.
+Once we presented the clients these options, we were able to receive the data faster than if we had just waited for their bureaucracy to finish. However, a considerable amount of time has already passed before we obtained the data, and it greatly impacted the quality of our analysis. Another method that I recently used that could be used to speed the bureaucracy even further, or possibly avoid it all, is creating synthetic data from their original data.
 
 <br />
 
@@ -172,7 +172,7 @@ print(f"Password for username {cred.username} in namespace {NAMESPACE} is {cred.
 ```
 
 <br />
-Something to note: hashed_password is a variable where the password is stored from part 1. In case you've run the coding in another file and your running this file seperately, be sure to replace the variable with the actual password of yours. 
+Something to note: hashed_password is a variable where the password is stored from part 1. In case you've run the coding in another file and your running this file separately, be sure to replace the variable with the actual password of yours. 
 Now that everything is set up, lets test out the decryption of the file!
 
 <br />
@@ -253,7 +253,7 @@ with open("C:/Users/dkim/Downloads/dencrypted_practice_2.ipynb", "wb") as f:
 ```
 
 <br />
-And there you have it: Your able to gain access through you de-encrypted data and now you can play around with it.
+And there you have it: You're able to gain access through your de-encrypted data and now you can play around with it.
 
 <br />
 
@@ -261,7 +261,7 @@ And there you have it: Your able to gain access through you de-encrypted data an
 
 <br />
 
-Keep in mind the encryption from the this coding is very simple compared to other paid softwares out there. The main purpose for showing this method is to help ease the mind of the clients and to expedite the process in gaining access to PII data in case there is beaurocracy issues. Even though this method has allowed my team to gain access to the data, our timeline to finish the project was near the end and the quality of our analysis was heavily affected. In part 2 I will share another method that I recently learned that could help you get started on your analysis without the need of their real data until they are ready to share it with you. This method: Synthetic Data.
+Keep in mind the encryption from the this coding is very simple compared to other paid softwares out there. The main purpose for showing this method is to help ease the mind of the clients and to expedite the process in gaining access to PII data in case there is bureaucracy issues. Even though this method has allowed my team to gain access to the data, our timeline to finish the project was near the end and the quality of our analysis was heavily affected. In part 2 I will share another method that I recently learned that could help you get started on your analysis without the need of their real data until they are ready to share it with you. This method: Synthetic Data.
 
 
 
