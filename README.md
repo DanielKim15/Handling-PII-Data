@@ -9,9 +9,6 @@ For this respository we will be focusing on the Encryption aspect of the data fi
 
 <br />
 
-## Why is this important? <br />
-
-<br />
 
 ## Part 1: Encrypting the Data
 
