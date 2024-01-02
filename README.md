@@ -1,5 +1,5 @@
 # Streamlining Data Access: A Guide to Data Encryption with Python
-When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
+Lets say you want to ensure the safety of your data before you start to download it and analyze it. There's a couple of methods you could use to mitigate the risk:
 <br />
 1. Encrypting the data <br />
 2. Creating Synthetic Data
@@ -9,7 +9,7 @@ For this respository we will be focusing on the Encryption aspect of the data fi
 
 <br />
 
-## Real life Scenario/Why is this important? <br />
+## Why is this important? <br />
 
 <br />
 
