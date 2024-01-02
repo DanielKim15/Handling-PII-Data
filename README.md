@@ -10,7 +10,6 @@ For this respository we will be focusing on the Encryption aspect of the data fi
 <br />
 
 ## Real life Scenario/Why is this important? <br />
-A few months ago I encountered a problem where my team and I could not recieve the data in time due to bureaucratic challenges we face related to accessing PII (Personal Identifiable Information) data. Considering how we had limited time with the project, We had to find a way to speed up the process by providing options to enhance data security. One of the methods we used to help enhance the security and help speed up the process was encrypting the data.
 
 <br />
 
@@ -93,9 +92,6 @@ with open("encrypted_practice.ipynb", "wb") as f:
 
 <br />
 
-Once we presented the clients these options, we were able to receive the data faster than if we had just waited for their bureaucracy to finish. However, a considerable amount of time has already passed before we obtained the data, and it greatly impacted the quality of our analysis. Another method that I recently used that could be used to speed the bureaucracy even further, or possibly avoid it all, is creating synthetic data from their original data.
-
-<br />
 
 ## Part 2: Storing your password
 
@@ -261,7 +257,7 @@ And there you have it: You're able to gain access through your de-encrypted data
 
 <br />
 
-Keep in mind the encryption from the this coding is very simple compared to other paid softwares out there. The main purpose for showing this method is to help ease the mind of the clients and to expedite the process in gaining access to PII data in case there is bureaucracy issues. Even though this method has allowed my team to gain access to the data, our timeline to finish the project was near the end and the quality of our analysis was heavily affected. In part 2 I will share another method that I recently learned that could help you get started on your analysis without the need of their real data until they are ready to share it with you. This method: Synthetic Data.
+Keep in mind the encryption from the this coding is very simple compared to other paid softwares out there. I wanted to provide a quick overview to get started on encrypting your data file using free resources in case you have a need for it. In the next part I plan to go over another method where you can start a surface level analysis without the need of real data: Synthetic Data.
 
 
 
