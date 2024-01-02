@@ -1,4 +1,4 @@
-# Streamlining Bureaucratic Data Access: A Guide to Data Encryption with Python
+# Streamlining Data Access: A Guide to Data Encryption with Python
 When encountering a bureaucracy issue with the client that prevents you from receiving the data early, here are a few ways that could help expedite the process:
 <br />
 1. Encrypting the data <br />
